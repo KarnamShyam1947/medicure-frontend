@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import * as authService from './../../services/AuthService';
 import {Link} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
+import {toast} from 'react-toastify';
 
 function TopBar() {
+
+    const navigate = useNavigate();
+
     const [username, setUsername] = useState(null);
 
     useEffect(() => {
@@ -11,7 +16,14 @@ function TopBar() {
             setUsername(user.name)
         }
     }, [])
-    
+
+    const logout = () => {
+        if (window.confirm("Are you sure, want to logout?")) {
+            authService.logout();
+            toast.success("Logged out successfully")
+            window.location.href = '/login';
+        }
+    }    
 
     return (
         <div className="cv-top-header">
@@ -28,11 +40,15 @@ function TopBar() {
                                 {
                                     username == null ?
                                     <li>
-                                        <Link to="/login">Login</Link>
+                                        <Link to="/login">Login</Link> 
+                                        |
+                                        <Link to="/register">Register</Link>
                                     </li>
                                     :
                                     <li>
-                                        <Link to="/logout">{username}</Link>
+                                        <Link to="/dashboard">Dashboard</Link>
+                                        |
+                                        <Link onClick={logout} >{username}</Link>
                                     </li>
                                 }
                                 {/* <li>

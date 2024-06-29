@@ -61,19 +61,7 @@ function Footer() {
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-2 col-md-6">
-                        <div className="cv-foot-box cv-foot-links">
-                            <h2>Categories</h2>
-                            <ul>
-                                <li><a href="javascript.html">Face masks</a></li>
-                                <li><a href="javascript.html">PPE Kit</a></li>
-                                <li><a href="javascript.html">Safety suits</a></li>
-                                <li><a href="javascript.html">Eye protector</a></li>
-                                <li><a href="javascript.html">Disposable</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-2 col-md-6">
+                    <div className="col-lg-4 col-md-6">
                         <div className="cv-foot-box cv-foot-links">
                             <h2>Usefull links</h2>
                             <ul>

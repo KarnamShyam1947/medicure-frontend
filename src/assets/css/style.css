@@ -101,6 +101,8 @@ img {
 .cv-btn:focus,input:focus,textarea:focus,button:focus{
     outline: none;
 }
+
+select,
 input {
     width: 100%;
     height: 50px;
@@ -108,6 +110,10 @@ input {
     padding: 0 20px;
     border-radius: 30px;
     outline: none;
+}
+
+select {
+    background-color: transparent;
 }
 
 .text-clr {
@@ -124,11 +130,12 @@ input::file-selector-button{
     cursor: pointer;
 }
 
-.cv-btn:focus,input:focus,textarea:focus,button:focus{
+.cv-btn:focus,input:focus,textarea:focus,button:focus, select:focus{
     outline: none;
     border-color: #3cbcff !important;
 }
 
+select.error,
 textarea.error,
 input.error {
     border-color: red;
@@ -893,6 +900,10 @@ p#me_timer span {
     padding: 20px 17px 13px 12px;
     border-radius: 10px;
     margin: 0 10px 30px;
+}
+.cv-feature-box:hover {
+    border-color: #3cbcff;
+    border-width: 1.5px;
 }
 .cv-feature-img svg{
     width:30px;
@@ -2236,7 +2247,7 @@ p#me_timer span {
 }
 .cv-last-order table td {
     padding: 20px;
-    text-transform: capitalize;
+    /* text-transform: capitalize; */
     border: 1px solid #d4f0ff;
     border-top: none;
     max-width: 250px;
@@ -2464,8 +2475,10 @@ td.cv-price {
     margin-bottom: 22px;
     line-height: 25px;
 }
-.cv-contact-form input {
-    margin-bottom: 15px;
+.cv-contact-form textarea,
+.cv-contact-form input,
+.cv-contact-form select {
+    margin-top: 15px;
 }
 textarea{
     width: 100%;

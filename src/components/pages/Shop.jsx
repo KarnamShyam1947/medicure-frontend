@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Layout from '../Layout'
 import * as medicineService from './../../services/MedicineService';
 import { Link } from "react-router-dom";
+
 function Shop() {
     const [medicines, setMedicines] = useState([]);
 
@@ -54,10 +55,11 @@ function Shop() {
                         <div className="cv-shop-box">
                             <div className="cv-shop-title">
                                 <h2 className="cv-sidebar-title">Showing results</h2>
-                                <p><span>Total : </span>8</p>
+                                <p><span>Total : </span>{medicines.length}</p>
                             </div>
                             <div className="row">
                                 {
+                                    medicines &&
                                     medicines.map((medicine, idx) => (
                                         <div key={idx} className="col-lg-3 col-sm-6">
                                             <div className="cv-product-box">
@@ -67,7 +69,7 @@ function Shop() {
                                                 <div className="cv-product-data">
                                                     <Link to={`/medicine-details?medicineId=${medicine.id}`} className="cv-price-title">{medicine.name}</Link>
                                                     <p className="cv-pdoduct-price">{medicine.price} Rs.</p>
-                                                    <a href="#" className="cv-price-cart"> Cart</a>
+                                                    <Link to={`/place-order?medicineId=${medicine.id}`} className="cv-price-cart"> Cart</Link>
                                                 </div>
                                             </div>
                                         </div>

@@ -1,6 +1,6 @@
-import * as medicineService from './../../services/MedicineService';
-import * as authService from './../../services/AuthService'
-import Layout from './../../components/Layout'
+import * as medicineService from '../../services/MedicineService';
+import * as authService from '../../services/AuthService'
+import Layout from '../Layout'
 import {useNavigate} from 'react-router-dom';
 import {toast} from 'react-toastify';
 import { useEffect, useState } from 'react'

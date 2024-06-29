@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../Layout'
 import { useEffect, useState } from 'react'
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import * as medicineService from './../../services/MedicineService';
 
 function ProductSingle() {
@@ -59,9 +59,9 @@ function ProductSingle() {
 
                                     </div>
                                     <div className="cv-prod-count">
-                                        <a href="#" className="cv-btn">
+                                        <Link to={`/place-order?medicineId=${medicine.id}`} className="cv-btn">
                                             Buy
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                                 <div className="col-md-12">

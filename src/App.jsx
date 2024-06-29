@@ -7,11 +7,21 @@ import About from "./components/pages/About"
 import Services from "./components/pages/Services"
 import Contact from "./components/pages/Contact"
 import { ToastContainer } from "react-toastify"
-import Logout from "./components/auth/Logout";
 import NoMatch from "./components/pages/NoMatch";
-import AddMedicine from "./components/medicine/AddMedicine";
 import NoAccess from "./components/pages/NoAccess";
 import ProductSingle from "./components/pages/ProductSingle";
+import Register from "./components/auth/Register";
+import SetPassword from "./components/auth/SetPassword";
+import Test from "./components/Test";
+import AddDoctor from "./components/admin/AddDoctor";
+import AddMedicine from "./components/admin/AddMedicine";
+import Dashboard from './components/users/Dashboard';
+import PlaceOrder from "./components/users/PlaceOrder";
+import UserOrders from "./components/users/UserOrders";
+import MakeAppointment from "./components/users/MakeAppointment";
+import UserAppointment from "./components/users/UserAppointment";
+import Disease from "./components/pages/Disease";
+import DiseaseSingle from "./components/pages/DiseaseSingle";
 
 function App() {
 
@@ -20,21 +30,43 @@ function App() {
             <ToastContainer />
 
             <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="shop" element={<Shop />}></Route>
-                <Route path="about" element={<About />}></Route>
-                <Route path="service" element={<Services />}></Route>
-                <Route path="contact" element={<Contact />}></Route>
+                {/* Static Pages */}
+                <Route path="/" element={<Home />} />
+                <Route path="shop" element={<Shop />} />
+                <Route path="about" element={<About />} />
+                <Route path="service" element={<Services />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="medicine-details" element={<ProductSingle />} />
 
-                <Route path="medicine-details" element={<ProductSingle />}></Route>
+                {/* Dashboard */}
+                <Route path="dashboard" element={<Dashboard />} />
 
-                <Route path="add-medicine" element={<AddMedicine />}></Route>
+                {/* Disease */}
+                <Route path="disease" element={<Disease />} />
+                <Route path="disease-single" element={<DiseaseSingle />} />
 
-                <Route path="login" element={<Login />}></Route>
-                <Route path="logout" element={<Logout />}></Route>
+                {/* Orders */}
+                <Route path="place-order" element={<PlaceOrder />} />
+                <Route path="my-orders" element={<UserOrders />} />
 
-                <Route path="error-403" element={<NoAccess />}></Route>
-                <Route path="*" element={<NoMatch />}></Route>
+                {/* Appointments */}
+                <Route path="make-appointment" element={<MakeAppointment />} />
+                <Route path="my-appointments" element={<UserAppointment />} />
+                
+                {/* ADMIN URLs */}
+                <Route path="add-medicine" element={<AddMedicine />} />
+                <Route path="add-doctor" element={<AddDoctor />} />
+
+                <Route path="test" element={<Test />} />
+
+                {/* AUTH URLs */}
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="set-password" element={ <SetPassword /> } />
+
+                {/* Error URLs */}
+                <Route path="error-403" element={<NoAccess />} />
+                <Route path="*" element={<NoMatch />} />
             </Routes>
         </>
     )
