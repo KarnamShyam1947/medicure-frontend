@@ -12,7 +12,7 @@ function Disease() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Diseases</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Diseases</li>
                                 </ul>
                             </div>

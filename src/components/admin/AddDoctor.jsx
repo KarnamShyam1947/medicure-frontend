@@ -113,7 +113,7 @@ function AddDoctor() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Add Doctor</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Add Doctor</li>
                                 </ul>
                             </div>

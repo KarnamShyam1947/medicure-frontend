@@ -22,6 +22,10 @@ import MakeAppointment from "./components/users/MakeAppointment";
 import UserAppointment from "./components/users/UserAppointment";
 import Disease from "./components/pages/Disease";
 import DiseaseSingle from "./components/pages/DiseaseSingle";
+import Doctors from "./components/admin/Doctors";
+import Medicines from "./components/admin/Medicines";
+import Departments from "./components/admin/Departments";
+import AddDepartment from "./components/admin/AddDepartment";
 
 function App() {
 
@@ -56,6 +60,10 @@ function App() {
                 {/* ADMIN URLs */}
                 <Route path="add-medicine" element={<AddMedicine />} />
                 <Route path="add-doctor" element={<AddDoctor />} />
+                <Route path="add-department" element={<AddDepartment />} />
+                <Route path="manage-doctor" element={<Doctors />} />
+                <Route path="manage-medicine" element={<Medicines />} />
+                <Route path="manage-department" element={<Departments />} />
 
                 <Route path="test" element={<Test />} />
 

@@ -97,7 +97,7 @@ function MakeAppointment() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Make Appointment</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Make Appointment</li>
                                 </ul>
                             </div>

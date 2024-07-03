@@ -40,7 +40,7 @@ function Shop() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Shop</h1>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Shop</li>
                                 </ul>
                             </div>
@@ -59,7 +59,7 @@ function Shop() {
                             </div>
                             <div className="row">
                                 {
-                                    medicines &&
+                                    medicines.length != 0 ?
                                     medicines.map((medicine, idx) => (
                                         <div key={idx} className="col-lg-3 col-sm-6">
                                             <div className="cv-product-box">
@@ -74,6 +74,8 @@ function Shop() {
                                             </div>
                                         </div>
                                     ))
+                                    :
+                                    <span>No Medicine avalible</span>
                                 }
                             </div>
                         </div>

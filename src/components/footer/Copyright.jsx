@@ -6,7 +6,7 @@ function Copyright() {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <p>&copy; 2024. All right reserved by Medical Equipments</p>
+                        <p>&copy; 2024. All right reserved by MediCure</p>
                     </div>
                 </div>
             </div>

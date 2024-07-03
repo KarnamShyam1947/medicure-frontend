@@ -1,11 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import * as authService from '../../services/AuthService'
 import * as appointmentService from '../../services/AppointmentService'
+import * as authService from '../../services/AuthService'
+import React, { useEffect, useState } from 'react'
+import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
 import Layout from '../Layout'
 
 function UserAppointment() {
     const [appointments, setAppointments] = useState([]);
     const [currentUser, setCurrentUser] = useState({});
+
+    const fetchAppointments = async () => {
+        const depts = await appointmentService.myAppointments()
+        setAppointments(depts);
+    }
 
     useEffect(() => {
         const user = authService.getCurrentUser();
@@ -16,14 +23,25 @@ function UserAppointment() {
             navigate("/login");
         }
         else {
-            const fetchAppointments = async () => {
-                const depts = await appointmentService.myAppointments()
-                setAppointments(depts);
-            }
-
             fetchAppointments();
         }
     }, [])
+
+    const deleteAppointment = async (id) => {
+        if (window.confirm("Are you sure, you want to delete the appointment??")) {
+            const result = await appointmentService.deleteAppointment(id);
+
+            if (result.statusCode >= 400) {
+                toast.error(result.message);
+                return ;
+            }
+            else {
+                toast.success(result.message);
+                fetchAppointments();
+                return ;
+            }
+        }
+    }
 
     return (
         <Layout>
@@ -34,7 +52,7 @@ function UserAppointment() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Your Appointments</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Your Appointments</li>
                                 </ul>
                             </div>
@@ -77,13 +95,18 @@ function UserAppointment() {
                                                         <td>{data.appointmentDate}</td>
                                                         <td>{data.appointmentSlot}</td>
                                                         <td>
-                                                            <a href="#" className="btn btn-danger">Cancel</a>
+                                                            <a
+                                                                onClick={() => deleteAppointment(data.appointmentId)}
+                                                                className="btn btn-danger">
+                                                                Cancel
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 ))
                                             }
                                         </tbody>
                                     </table>
+                                    
                                     :
                                     <table>
                                         <thead>
@@ -106,7 +129,11 @@ function UserAppointment() {
                                                         <td>{data.appointmentDate}</td>
                                                         <td>{data.appointmentSlot}</td>
                                                         <td>
-                                                            <a href="#" className="btn btn-danger">Cancel</a>
+                                                            <a 
+                                                                onClick={() => deleteAppointment(data.appointmentId)}
+                                                                className="btn btn-danger">
+                                                                Cancel
+                                                            </a>
                                                         </td>
                                                     </tr>
                                                 ))
@@ -118,6 +145,35 @@ function UserAppointment() {
                             </div>
                         </div>
                     </div>
+                    
+                    {
+                        currentUser.role == "USER" || currentUser.role == "ADMIN" 
+                        ?
+                        <>
+                            <div className="d-flex justify-content-between mt-3">
+                                <nav aria-label="...">
+                                    <ul className="pagination">
+                                        <li className="page-item disabled">
+                                            <a className="page-link">Previous</a>
+                                        </li>
+                                        <li className="page-item"><a className="page-link" href="#">1</a></li>
+                                        <li className="page-item active" aria-current="page">
+                                            <a className="page-link" href="#">2</a>
+                                        </li>
+                                        <li className="page-item"><a className="page-link" href="#">3</a></li>
+                                        <li className="page-item">
+                                            <a className="page-link" href="#">Next</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                                <Link to={"/make-appointment"} className="btn btn-primary">Add Appointment</Link>
+                            </div>
+                            <span>pages</span>
+                        </>
+                        :
+                        <span></span>
+                    }
+                    
                 </div>
             </div>
         </Layout>

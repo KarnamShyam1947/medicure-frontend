@@ -80,7 +80,7 @@ function Register() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Register</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Register</li>
                                 </ul>
                             </div>

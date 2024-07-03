@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8080/api/v1';
+const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export async function addMedicine(name, price, description, file) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -51,4 +51,24 @@ export async function getMedicineById(id) {
         console.error(error);
         return error;
     }
+}
+
+export async function deleteMedicine(medicineId) {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    try {
+        const response = await fetch(`${BASE_URL}/medicine/${medicineId}`, {
+            method: "DELETE",
+            headers: new Headers({
+                'Authorization': `Bearer ${currentUser.token}`
+            })
+        })
+        const data = await response.json();
+        
+        return data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+
 }

@@ -59,7 +59,7 @@ function SetPassword() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Set Password</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Set Password</li>
                                 </ul>
                             </div>

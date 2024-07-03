@@ -33,7 +33,7 @@ function ProductSingle() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Product Single</h1>
                                 <ul>
-                                    <li><a href="index5.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Product Single</li>
                                 </ul>
                             </div>

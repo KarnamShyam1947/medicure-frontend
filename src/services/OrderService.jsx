@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8080/api/v1"
+const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export async function placeOrder(medicineId, data) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
@@ -9,7 +9,7 @@ export async function placeOrder(medicineId, data) {
         data.quantity = Number(data.quantity)
         console.log(data);
         
-        const response = await fetch(`${BASE_URL}/orders/place-order`, {
+        const response = await fetch(`${BASE_URL}/orders/`, {
             method: "POST",
             body: JSON.stringify(data),
             headers:new Headers({
@@ -30,10 +30,30 @@ export async function myOrders() {
 
     try {
         
-        const response = await fetch(`${BASE_URL}/orders/my-orders`, {
+        const response = await fetch(`${BASE_URL}/orders/`, {
             method: "GET",
             headers:new Headers({
                 'Authorization': `Bearer ${currentUser.token}`
+            })
+        });
+        const resp = await response.json();
+        return resp;
+
+    } catch (error) {
+        return error;
+    }
+}
+
+export async function deleteOrder(orderId) {
+    const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+
+    try {
+        
+        const response = await fetch(`${BASE_URL}/orders/${orderId}`, {
+            method: "DELETE",
+            headers:new Headers({
+                'Authorization': `Bearer ${currentUser.token}`,
+                "Content-Type": "application/json"
             })
         });
         const resp = await response.json();

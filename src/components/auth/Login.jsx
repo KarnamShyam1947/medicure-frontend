@@ -64,7 +64,7 @@ function Login() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Login</h1>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Login</li>
                                 </ul>
                             </div>

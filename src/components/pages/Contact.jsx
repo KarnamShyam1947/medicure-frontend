@@ -1,5 +1,6 @@
 import React from 'react'
 import Layout from '../Layout'
+import { Link } from "react-router-dom";
 
 function Contact() {
     return (
@@ -11,7 +12,7 @@ function Contact() {
                             <div className="cv-breadcrumb-box">
                                 <h1>Contact</h1>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
+                                    <li><Link to={"/"}>Home</Link></li>
                                     <li>Contact</li>
                                 </ul>
                             </div>
