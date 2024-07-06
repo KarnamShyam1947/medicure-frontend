@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Layout from '../Layout'
 import * as authService from './../../services/AuthService';
 import {toast} from 'react-toastify';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import { useNavigate, useSearchParams, Link } from 'react-router-dom';
 
 function SetPassword() {
     const navigate = useNavigate();
