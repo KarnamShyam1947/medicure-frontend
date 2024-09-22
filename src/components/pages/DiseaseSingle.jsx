@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Layout from '../Layout'
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import * as predictService from './../../services/PredictService';
 import FadeLoader from 'react-spinners/FadeLoader';
 

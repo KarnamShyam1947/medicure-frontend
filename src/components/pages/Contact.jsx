@@ -26,8 +26,7 @@ function Contact() {
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="cv-contact-detail">
-                                <h2 className="cv-sidebar-title">Contact Info</h2>
-                                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+                                <h2 className="cv-sidebar-title">Contact Us</h2>
                                 <ul>
                                     <li>
                                         <div className="cv-contact-icon">

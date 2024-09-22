@@ -2,6 +2,7 @@ const BASE_URL = import.meta.env.VITE_API_BASE_URL
 
 export async function makeAppointment(data) {
     const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+    data.userId = currentUser.id;
 
     try {
         

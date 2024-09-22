@@ -11,10 +11,11 @@ function Home() {
                         <div className="col-md-6">
                             <div className="cv-banner-text">
                                 <p className="cv-banner-cat">Medical personal protective equipment PPE </p>
-                                <h1>virus protection</h1>
-                                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                    dolore</p>
+                                <h1>Disease Diagnosis</h1>
+                                <p>
+                                    The Disease Diagnosis component of our AI/ML-Based Disease Diagnosis and Medicine 
+                                    Delivery System is designed to revolutionize the diagnostic process by leveraging 
+                                    advanced artificial intelligence and machine learning technologies</p>
                                 <button className="cv-btn">Shop now</button>
                             </div>
                         </div>

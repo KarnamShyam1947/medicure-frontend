@@ -35,10 +35,8 @@ function About() {
                         <div className="col-lg-7">
                             <div className="cv-about-content">
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                                    do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                                    laboris nisi ut aliquip ex ea commodo consequat.
+                                     We are a dedicated team of innovators, engineers, and healthcare professionals committed to revolutionizing the field of medical diagnosis through cutting-edge technology.
+                                      Our mission is to leverage artificial intelligence and machine learning to create a reliable, efficient, and user-friendly system that enhances the accuracy of disease diagnosis and improves patient outcomes.
                                 </p>
                                 <h2>Our Expertise</h2>
                                 <ul>
@@ -82,23 +80,24 @@ function About() {
                     <div className="cv-heading">
                         <h1>Our team</h1>
                         <p>
-                            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                            nisi ut aliquip ex ea commodo consequat.
+                        Together, we are committed to delivering a transformative solution that empowers
+                         healthcare providers with the tools they need to diagnose diseases accurately and 
+                        efficiently, ultimately improving patient care and health outcomes.
                         </p>
                     </div>
-                    <div className="row">
+                    <div className="row justify-content-center">
                         <div className="col-lg-3 col-md-6">
                             <div className="cv-team-box">
                                 <div className="cv-team-img">
                                     <img
-                                        src="src/assets/images/team1.jpg"
+                                        src="src/assets/images/team1.jpeg"
                                         alt="image"
                                         className="img-fluid"
                                     />
                                 </div>
                                 <div className="cv-team-text">
-                                    <h2>John Marsh</h2>
-                                    <p>Heart Surgeon</p>
+                                    <h2>Chandra Sekhar</h2>
+                                    <p>21MIC7143</p>
                                 </div>
                             </div>
                         </div>
@@ -106,14 +105,14 @@ function About() {
                             <div className="cv-team-box">
                                 <div className="cv-team-img">
                                     <img
-                                        src="src/assets/images/team2.jpg"
+                                        src="src/assets/images/team2.jpeg"
                                         alt="image"
                                         className="img-fluid"
                                     />
                                 </div>
                                 <div className="cv-team-text">
-                                    <h2>Nancy Martin</h2>
-                                    <p>Neurologist</p>
+                                    <h2>Koteswararao</h2>
+                                    <p>21MIC7195</p>
                                 </div>
                             </div>
                         </div>
@@ -127,12 +126,12 @@ function About() {
                                     />
                                 </div>
                                 <div className="cv-team-text">
-                                    <h2>Martin Guptil</h2>
-                                    <p>Eye Specialist</p>
+                                    <h2>Chenna Kesava Rao </h2>
+                                    <p>21MIC7207</p>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6">
+                        {/* <div className="col-lg-3 col-md-6">
                             <div className="cv-team-box">
                                 <div className="cv-team-img">
                                     <img
@@ -146,7 +145,7 @@ function About() {
                                     <p>Neurologist</p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </div>
