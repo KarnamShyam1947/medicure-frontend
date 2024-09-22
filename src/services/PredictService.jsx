@@ -1,4 +1,4 @@
-const BASE_URL = "https://cloudsip202324.pythonanywhere.com"
+const BASE_URL = import.meta.env.VITE_API_DISEASE_BASE_URL
 
 export async function getPrediction(file, type) {    
     try {
