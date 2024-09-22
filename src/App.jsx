@@ -26,6 +26,7 @@ import Doctors from "./components/admin/Doctors";
 import Medicines from "./components/admin/Medicines";
 import Departments from "./components/admin/Departments";
 import AddDepartment from "./components/admin/AddDepartment";
+import RequiredAuth from "./components/auth/RequiredAuth";
 
 function App() {
 
@@ -42,20 +43,24 @@ function App() {
                 <Route path="contact" element={<Contact />} />
                 <Route path="medicine-details" element={<ProductSingle />} />
 
-                {/* Dashboard */}
-                <Route path="dashboard" element={<Dashboard />} />
+                <Route element={<RequiredAuth />}>
+                    {/* Dashboard */}
+                    <Route path="dashboard" element={<Dashboard />} />
+
+                    {/* Orders */}
+                    <Route path="place-order" element={<PlaceOrder />} />
+                    <Route path="my-orders" element={<UserOrders />} />
+
+                    {/* Appointments */}
+                    <Route path="make-appointment" element={<MakeAppointment />} />
+                    <Route path="my-appointments" element={<UserAppointment />} />
+                </Route>
 
                 {/* Disease */}
                 <Route path="disease" element={<Disease />} />
                 <Route path="disease-single" element={<DiseaseSingle />} />
 
-                {/* Orders */}
-                <Route path="place-order" element={<PlaceOrder />} />
-                <Route path="my-orders" element={<UserOrders />} />
-
-                {/* Appointments */}
-                <Route path="make-appointment" element={<MakeAppointment />} />
-                <Route path="my-appointments" element={<UserAppointment />} />
+                
                 
                 {/* ADMIN URLs */}
                 <Route path="add-medicine" element={<AddMedicine />} />
